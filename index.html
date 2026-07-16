@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Masonic Journey Through the Cape — 7 Days</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap');
+
+  :root {
+    --navy: #1A2340;
+    --gold: #C8900A;
+    --gold-light: #e8a82a;
+    --cream: #F5EFD8;
+    --dark: #0D1420;
+    --white: #FFFFFF;
+    --muted: #6A7A8A;
+    --light-bg: #F8F4EC;
+    --border: #D4C89A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--light-bg);
+    color: #2A2A2A;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--dark);
+    color: var(--white);
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 2px solid rgba(200,144,10,0.25);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,144,10,0.15);
+  }
+  .cover-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+  .cover-rule { width: 80px; height: 3px; background: var(--gold); margin: 24px 0; }
+  .cover-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #B8C0CC;
+    max-width: 560px;
+    line-height: 1.5;
+  }
+  .cover-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item { }
+  .cover-meta-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-bottom: 4px;
+  }
+  .cover-meta-value {
+    font-size: 14px;
+    color: #C8D0DA;
+  }
+
+  /* INTRO */
+  .intro {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 60px;
+    border-top: 3px solid var(--gold);
+  }
+  .intro p {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 820px;
+    color: #D0D8E4;
+  }
+  .intro p + p { margin-top: 16px; }
+
+  /* OVERVIEW TABLE */
+  .overview {
+    padding: 48px 60px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .overview-day {
+    padding: 16px 12px;
+    border-right: 1px solid var(--border);
+    background: var(--white);
+  }
+  .overview-day:last-child { border-right: none; }
+  .overview-day-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .overview-day-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .overview-day-theme {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .overview-day.highlight {
+    background: var(--navy);
+  }
+  .overview-day.highlight .overview-day-num { color: var(--gold); }
+  .overview-day.highlight .overview-day-name { color: var(--white); }
+  .overview-day.highlight .overview-day-theme { color: #8899BB; }
+
+  /* DAY CARDS */
+  .day-section {
+    padding: 0 60px 64px;
+    margin-top: 0;
+  }
+  .day-section:first-of-type { margin-top: 0; }
+
+  .day-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    padding: 48px 0 24px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .day-number {
+    font-family: 'EB Garamond', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    min-width: 90px;
+  }
+  .day-header-text {}
+  .day-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .day-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+  }
+  .day-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+  .day-badge {
+    margin-left: auto;
+    padding: 6px 14px;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* STOP CARDS */
+  .stops-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stop {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stop-marker {
+    background: var(--navy);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .stop-marker-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .stop-body {
+    padding: 18px 20px 18px 0;
+  }
+  .stop-type {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .stop-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+  .stop-location {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .stop-desc {
+    font-size: 14px;
+    color: #3A3A3A;
+    line-height: 1.6;
+  }
+  .stop-masonic {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #F0EAD6;
+    border-left: 3px solid var(--gold);
+    font-size: 13px;
+    color: #4A3A10;
+    line-height: 1.55;
+    border-radius: 0 4px 4px 0;
+  }
+  .stop-masonic strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* EVENING BOXES */
+  .evening-box {
+    margin-top: 24px;
+    padding: 18px 20px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .evening-icon {
+    font-size: 22px;
+    min-width: 32px;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .evening-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .evening-text {
+    font-size: 14px;
+    color: #C0CCD8;
+    line-height: 1.55;
+  }
+  .evening-text em { color: #E0DCC8; font-style: italic; }
+
+  /* LODGE VISIT HIGHLIGHT */
+  .lodge-visit {
+    margin-top: 20px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #1A2340 60%, #243060);
+    border-radius: 8px;
+    border: 1px solid rgba(200,144,10,0.3);
+  }
+  .lodge-visit-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .lodge-visit-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .lodge-visit-text {
+    font-size: 13.5px;
+    color: #B0BCD0;
+    line-height: 1.6;
+  }
+
+  /* PRACTICAL INFO */
+  .practical {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 60px;
+    margin-top: 40px;
+  }
+  .practical h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .practical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .practical-card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(200,144,10,0.2);
+  }
+  .practical-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .practical-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .practical-card li {
+    font-size: 13.5px;
+    color: #B0BCD0;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.45;
+  }
+  .practical-card li:last-child { border-bottom: none; }
+  .practical-card li::before {
+    content: '·';
+    color: var(--gold);
+    margin-right: 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 32px 60px;
+    background: var(--dark);
+    text-align: center;
+  }
+  .footer-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    color: #6A7A8A;
+    font-style: italic;
+  }
+  .footer-lodge {
+    margin-top: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* DAY SEPARATOR */
+  .day-separator {
+    height: 1px;
+    background: var(--border);
+    margin: 0 60px;
+  }
+
+  @media print {
+    body { font-size: 12px; }
+    .cover { padding: 40px; }
+    .day-section { padding: 0 40px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Grootoosten der Nederlanden &nbsp;·&nbsp; Cape Heritage Journey</div>
+  <h1>From the Lowlands<br>to the Cape</h1>
+  <div class="cover-rule"></div>
+  <p class="cover-subtitle">A seven-day Masonic heritage journey through the Western Cape of South Africa — tracing the footsteps of the brethren who built a colony and left their mark on its landscape, its towns, and its buildings.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Duration</div>
+      <div class="cover-meta-value">7 Days · 6 Nights</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Starting Point</div>
+      <div class="cover-meta-value">Cape Town</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Guest Lodge</div>
+      <div class="cover-meta-value">Sharman Crawford No. 608 · Irish Constitution</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Prepared for</div>
+      <div class="cover-meta-value">Brethren of Erasmus · Grootoosten der Nederlanden</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p>In 1772 a ship's captain from the Netherlands called at the Cape of Good Hope and convened ten brethren under a Dutch warrant. What followed over the next century was one of the most remarkable stories of Masonic influence on a landscape anywhere in the world. The lodge did not merely meet in the colony — it helped design it.</p>
+  <p>This journey takes you to the places where that influence is still visible: the temple whose floor plan mirrors Solomon's inner sanctum, the wine cellar whose pediment encodes the Masonic triangle, the church whose pulpit rests on lions from the lodge brother's chisel, and the towns whose very street plans may reflect the geometry of the Great Architect. You will visit active lodges, meet South African brethren, and walk streets that Dutch Masons walked more than two hundred years before you.</p>
+  <p>Should the ladies wish to accompany the party, the Western Cape offers a wonderfully rich parallel programme — the Franschhoek Wine Tram, the galleries and gardens of Stellenbosch, the penguin colony at Boulders Beach, whale watching from Hermanus, and the markets and food scene of Cape Town's city bowl — all within easy reach of the lodge itinerary. We would be delighted to help design a companion programme tailored to their interests and running alongside the Masonic days.</p>
+</div>
+
+<!-- OVERVIEW -->
+<div class="overview">
+  <div class="section-title">Journey at a Glance</div>
+  <div class="overview-grid">
+    <div class="overview-day highlight">
+      <div class="overview-day-num">Day 1</div>
+      <div class="overview-day-name">Cape Town Arrival &amp; De Goede Hoop</div>
+      <div class="overview-day-theme">The founding lodge · Solomon's Temple</div>
+    </div>
+    <div class="overview-day">
+      <div class="overview-day-num">Day 2</div>
+      <div class="overview-day-name">Cape Town Deep Dive</div>
+      <div class="overview-day-theme">Groote Kerk · Tuynhuys · Groot Constantia</div>
+    </div>
+    <div class="overview-day">
+      <div class="overview-day-num">Day 3</div>
+      <div class="overview-day-name">Stellenbosch &amp; Franschhoek</div>
+      <div class="overview-day-theme">Cape Dutch origins · Huguenot settlement</div>
+    </div>
+    <div class="overview-day highlight">
+      <div class="overview-day-num">Day 4</div>
+      <div class="overview-day-name">Paarl &amp; Worcester</div>
+      <div class="overview-day-theme">The kerkplaats · Solomon's Town Plan</div>
+    </div>
+    <div class="overview-day">
+      <div class="overview-day-num">Day 5</div>
+      <div class="overview-day-name">Tulbagh &amp; the Boland Interior</div>
+      <div class="overview-day-theme">Church Street · the earthquake restoration</div>
+    </div>
+    <div class="overview-day">
+      <div class="overview-day-num">Day 6</div>
+      <div class="overview-day-name">Swellendam &amp; the Overberg</div>
+      <div class="overview-day-theme">Oldest inland town · Drostdy heritage</div>
+    </div>
+    <div class="overview-day highlight">
+      <div class="overview-day-num">Day 7</div>
+      <div class="overview-day-name">Farewell Lodge Evening</div>
+      <div class="overview-day-theme">Working visit · Sharman Crawford No. 608</div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">01</div>
+    <div class="day-header-text">
+      <div class="day-label">Day One · Cape Town</div>
+      <div class="day-title">The Founding Lodge</div>
+      <div class="day-subtitle">Where Dutch Masonry first took root on African soil</div>
+    </div>
+    <div class="day-badge">Lodge Visit</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Temple Visit</div>
+        <div class="stop-name">De Goede Hoop Lodge</div>
+        <div class="stop-location">Bouquet Street, Cape Town · Est. 1772 · National Monument</div>
+        <div class="stop-desc">The oldest active Masonic lodge in Africa and one of the oldest in the southern hemisphere. The temple was designed by Brother Louis Thibault, built by Brother Herman Schutte, and consecrated on 7 July 1803 by Advocate J.H. de Mist — who was also Deputy Grand Master National of the Netherlands. A guided tour of the full symbolic programme is available by arrangement with the Grand Lodge of South Africa.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          The main temple room follows the exact dimensions of the inner sanctum of Solomon's Temple in Jerusalem. The chequered black-and-white pavement covers the floor. Anreith's surviving figure of Hiram Abiff lies in the Chamber of Meditation — the only sculptural representation of this Third Degree figure in South Africa. Three more Anreith figures — Silence, Death, and Bereavement — survive in the undamaged chambers. The triumphal arch gateway is a Masonic symbol of initiation and passage. This lodge was warranted by the Grootoosten der Nederlanden in 1772 and remains the direct ancestor of all South African Masonry.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Heritage Walk</div>
+        <div class="stop-name">Stalplein Precinct</div>
+        <div class="stop-location">Between Bouquet Street and Government Avenue, Cape Town</div>
+        <div class="stop-desc">The small square that contains the lodge also contains the Government Printer building — once the lodge's own banqueting hall, which housed the Cape Parliament from 1854 to 1884. The lodge's first Speaker, Sir Christoffel Brand, was also Deputy District Grand Master National for the Dutch Constitution. The precinct also includes Tuynhuys, the President's Cape Town office, standing metres from the lodge gate — designed by the same Masonic architect.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Note</strong>
+          South Africa's parliament met in a Masonic lodge for thirty years. The President's office stands in the same precinct as the lodge that started it all. The spatial relationship between temporal power and the craft is literally written into the geography of Cape Town's historic core.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Afternoon Wine Tasting</div>
+        <div class="stop-name">Klein Constantia — Vin de Constance</div>
+        <div class="stop-location">Klein Constantia Road, Constantia · Est. 1685 · Open daily 9am–5pm</div>
+        <div class="stop-desc">A short drive from Cape Town's city centre, Klein Constantia is home to one of the most historically significant wines in the world — Vin de Constance, the legendary natural sweet Muscat that was Napoleon's favourite wine on St Helena, praised by Baudelaire and Dickens, and now fully restored to its 18th-century glory. The estate is set in the same Constantia valley as Groot Constantia and shares the same Dutch colonial origins. The tasting room is intimate and the wines — both the famous Vin de Constance and the dry range — are exceptional.</div>
+        <div class="stop-masonic">
+          <strong>Why This Estate</strong>
+          The Constantia valley was the heartland of Dutch colonial wine culture — the same valley where Thibault and Anreith worked on the Cloete Cellar, and where Governor Simon van der Stel first planted vines in 1685. Drinking the restored Vin de Constance here, in the valley where it was first made, is the right way for Dutch brethren to arrive in the Cape. Napoleon drank this wine on the island where the Dutch had traded for 150 years. The circle is complete.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="lodge-visit-text">By arrangement with the Grand Lodge of South Africa, the evening is spent in the lodge itself — a formal welcome dinner in the rooms of the oldest lodge in Africa. Dutch and South African brethren at the same table in the building their shared tradition raised. Contact: Grand Lodge of South Africa, grandlodge.co.za</div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 2 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">02</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Two · Cape Town</div>
+      <div class="day-title">The Masonic City</div>
+      <div class="day-subtitle">Six National Monuments — one fraternal hand</div>
+    </div>
+    <div class="day-badge">Walking Tour</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Religious Heritage</div>
+        <div class="stop-name">Groote Kerk — Anreith's Pulpit</div>
+        <div class="stop-location">Adderley Street, Cape Town · National Monument</div>
+        <div class="stop-desc">South Africa's oldest Dutch Reformed Church. The carved oak pulpit — one of the finest pieces of religious craftsmanship in the country — was designed by Anton Anreith and completed in 1789, with the carving work finished by lodge brother Jan Jacob Graaff. The church building itself was designed by Hermann Schutte.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          The pulpit rests on a pedestal of lions — Masonic symbol of Solomon's throne and sovereign strength. Two flanking pillars inside the church echo Boaz and Jachin, the twin pillars of Solomon's Temple porch. Anreith's acanthus leaf carvings throughout the pulpit are classical symbols of immortality, widely used in lodge interiors across Europe. Three confirmed lodge brothers were responsible for this building.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Civic Heritage</div>
+        <div class="stop-name">Strand Street Lutheran Church</div>
+        <div class="stop-location">Strand Street, Cape Town · National Monument</div>
+        <div class="stop-desc">Commissioned by Martin Melck, a prominent merchant connected to the lodge community. Anreith created the King David relief on the organ loft and the carved pulpit. He later converted the former VOC warehouse facade into a building fit for worship. The building's transformation from profane warehouse to sacred church is itself a Masonic metaphor — the rough ashlar made perfect.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          King David as the patron who gathered all materials for Solomon's Temple is a foundational Masonic narrative — depicted here in carved relief above the organ. The conversion of a functional building into sacred space mirrors the Masonic journey of the candidate.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Presidential Residence</div>
+        <div class="stop-name">Tuynhuys</div>
+        <div class="stop-location">Government Avenue, Cape Town · National Monument</div>
+        <div class="stop-desc">The Cape Town office of the President of South Africa, standing a few metres from De Goede Hoop Lodge. The neoclassical facade was designed by Thibault; the mythological sculptures of Mercury and Poseidon flanking the VOC emblem on the exterior are attributed to Anreith. The building has been associated with the seat of power at the Cape for nearly 350 years.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          Mercury (commerce and intellect) and Poseidon (sea power) were chosen by Masonic craftsmen to represent the VOC's dual nature. The neoclassical facade applies the rule, level, and plumb — strict horizontal balance, vertical order — the Masonic proportional ideal made architecture.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">4</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Lunch · Belgian Restaurant</div>
+        <div class="stop-name">Den Anker</div>
+        <div class="stop-location">Pierhead, V&A Waterfront, Cape Town · Est. 1994 · +27 21 419 0249</div>
+        <div class="stop-desc">One of Cape Town's best-loved waterfront restaurants, founded by Belgian entrepreneur Denis Bouckaert from Ghent in 1994. Den Anker sits on the quayside of the V&A Waterfront with wall-to-wall windows giving a direct view of Table Mountain and the working harbour. The menu centres on Belgian classics — moules-frites, bitterballen, steak au poivre, North Sea shrimps flown in from Europe — alongside fresh South African seafood. The Belgian beer list is the finest in Africa, including De Koninck, La Chouffe, Duvel on tap, Vedett Extra White, and the house Anker Brew, created to a personal recipe by Bouckaert and brewed in Lochristi, Belgium.</div>
+        <div class="stop-masonic">
+          <strong>Why This Stop Belongs on This Journey</strong>
+          For Dutch and Belgian brethren arriving from the Grootoosten, Den Anker is a piece of home at the southern tip of Africa. Moules-frites and a glass of De Koninck, looking out at Table Mountain and the harbour through which every Dutch ship passed on its way to the East Indies — this is where the historical and the personal converge. The founder was Belgian. The beer is Belgian. The harbour view is the same one the VOC ships saw when they arrived in 1652. It is the right lunch for this journey.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">5</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Wine Estate · National Monument</div>
+        <div class="stop-name">Groot Constantia — The Cloete Cellar Pediment</div>
+        <div class="stop-location">Constantia Valley, Cape Town · Est. 1685 · National Monument</div>
+        <div class="stop-desc">South Africa's oldest wine estate and one of its finest pieces of architectural heritage. The wine cellar, designed by Thibault and commissioned by Hendrik Cloete in 1791, carries one of the most remarkable pieces of public Masonic symbolism on the continent. Allow time for wine tasting after the heritage tour.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          Anreith's Ganymede pediment is enclosed within a perfect classical triangle — Masonic emblem of Strength, Beauty, and Wisdom. Zeus as eagle sits at the apex: the Great Architect watching over human labour. Thibault's strict bilateral symmetry is the plumb and level made visible in stone. The Abundantia figure on the manor gable holds a cornucopia — Masonic abundance through righteous work. Both craftsmen were members of De Goede Hoop Lodge.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🍺</div>
+    <div>
+      <div class="evening-label">Evening — Perseverance Tavern</div>
+      <div class="evening-text">End the day at <em>Perseverance Tavern</em> — 83 Buitenkant Street, Gardens, Cape Town — the oldest pub in South Africa, established in 1808. Known to locals as Persies, it stands directly opposite Iziko Rust en Vreugd, five minutes' walk from De Goede Hoop Lodge. The bar counter is built from old wine casks. A revived vine — one of the oldest in the Cape — grows in the courtyard. <em>Cecil John Rhodes is said to have drunk here</em>. It opened the same year Thibault consecrated the lodge on Bouquet Street. The brethren of the Grootoosten will feel entirely at home — the current owner, Maarten van Doesburgh, is Dutch. Open seven days. Fully licensed. Reservations not required — but arrive before the after-work crowd.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 3 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">03</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Three · Stellenbosch &amp; Franschhoek</div>
+      <div class="day-title">Dutch Roots in the Winelands</div>
+      <div class="day-subtitle">The oldest inland town and its Huguenot neighbour</div>
+    </div>
+    <div class="day-badge">~60km from Cape Town</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Town Heritage</div>
+        <div class="stop-name">Stellenbosch Village Museum &amp; Dorp Street</div>
+        <div class="stop-location">Stellenbosch · Founded 1679 · South Africa's second oldest town</div>
+        <div class="stop-desc">The finest concentration of Cape Dutch architecture in South Africa. Dorp Street in particular preserves an almost unbroken streetscape of gabled, whitewashed homesteads from the 18th and 19th centuries. The Stellenbosch Village Museum presents four restored historic houses showing the evolution of settler architecture from the 1690s to the Victorian era.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Connection</strong>
+          Many of the merchant and professional families who owned properties along Dorp Street were active lodge members in Cape Town. The Dutch Reformed Church in Stellenbosch — the Moederkerk — was built according to proportional principles by craftsmen trained in the same tradition as Thibault and Anreith. Stellenbosch is home to two active Masonic lodges: Stellenbosch Lodge No. 2646 (English Constitution, 31 Bird Street, stblodge2646@gmail.com) and an Irish Constitution lodge. An evening fraternal visit to the Irish lodge is warmly recommended — Dutch and Irish brethren at labour together in the oldest university town in South Africa. Contact Sharman Crawford Lodge No. 608 for an introduction to the Irish lodge Secretary.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Morning Wine Tasting</div>
+        <div class="stop-name">Lanzerac Estate</div>
+        <div class="stop-location">1 Lanzerac Road, Stellenbosch · Est. 1692 · Open daily 8am–7pm · +27 21 887 1132</div>
+        <div class="stop-desc">One of the most beautifully preserved Cape Dutch wine estates in the country, founded in 1692 and now operating as a five-star hotel and working winery. The Cape Dutch homestead at its centre is considered one of the finest examples of the style in the Winelands. The estate is famed for its Pinotage and red blends, and the tasting experience is unhurried — the kind of estate where a morning tasting under the historic oaks can quietly become a long, slow lunch.</div>
+        <div class="stop-masonic">
+          <strong>Heritage Note</strong>
+          Founded just ten years after the Cape Colony was established, Lanzerac's homestead is a textbook example of the Cape Dutch architectural tradition that Thibault and Anreith later refined and codified. The symmetry of its gabled façade, the proportions of its werf, and the craftsmanship of its interiors all reflect the aesthetic principles that the lodge brothers brought from the Netherlands to South Africa.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Wine Estate · Lunch</div>
+        <div class="stop-name">Boschendal Manor House</div>
+        <div class="stop-location">Between Stellenbosch and Franschhoek · Est. 1685 · Manor house 1812 · Open daily</div>
+        <div class="stop-desc">One of the most visually striking Cape Dutch manor houses in South Africa, built in 1812 in the classic H-plan style, framed by oak trees against the Simonsberg mountains. The estate was originally established by French Huguenot Jean le Long but grew under Dutch-speaking ownership. Today it offers acclaimed wine tastings and an estate picnic under the oaks — one of the great outdoor lunches in the Winelands.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Note</strong>
+          The H-plan Cape Dutch homestead's strict bilateral symmetry, proportional gables, and centred fanlight reflect the same aesthetic of order and harmony applied by Thibault in his public buildings. The fanlight, famously developed by Anreith at Rust en Vreugd, became a signature of Cape Dutch design through lodge-influenced craftsmen.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">4</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Wine Tasting</div>
+        <div class="stop-name">Babylonstoren</div>
+        <div class="stop-location">Babylonstoren Road, Simondium, Franschhoek · Est. c.1692 · Open daily 9am–5pm</div>
+        <div class="stop-desc">One of the oldest Cape farms still in existence, set at the foot of Simonsberg with an extraordinary eight-acre garden of heritage vegetables, herbs, and fruit trees, two restaurants, a farm shop, and a bakery. Regularly described as the finest wine farm in the Cape Winelands. The tasting room is airy and the wines — Chenin Blanc, Viognier, and the flagship Babel blend — are outstanding. Give yourself three hours minimum.</div>
+        <div class="stop-masonic">
+          <strong>Heritage Note</strong>
+          The garden at Babylonstoren is laid out with the same geometric precision — ordered, symmetrical, purposeful — that characterises Masonic aesthetic ideals. Its name references the Tower of Babel and therefore, implicitly, the dispersion of the builders — a concept with deep resonance in Masonic legend. The estate's origins in the 1690s place it in the first generation of Dutch settler farms at the Cape.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">5</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Town Heritage</div>
+        <div class="stop-name">Franschhoek Village &amp; Huguenot Monument</div>
+        <div class="stop-location">Franschhoek · Founded 1688 by French Huguenot refugees</div>
+        <div class="stop-desc">Founded by French Protestant refugees granted land by the Dutch colonial government after the revocation of the Edict of Nantes. Their arrival brought new skills, new vines, and new names to the Boland — many of which are still carried by Cape wine estates today. The Huguenot Memorial Museum records their story.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Connection</strong>
+          Several Huguenot settler families from Franschhoek were later represented in the membership rolls of De Goede Hoop Lodge. The tradition of religious tolerance that moved the Dutch colonial government to shelter French Protestant refugees is the same tradition that shaped Dutch Masonry — brotherhood across national and religious boundaries as a governing principle.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lodge-visit">
+    <div class="lodge-visit-label">Evening — Fraternal Visit</div>
+    <div class="lodge-visit-title">Irish Constitution Lodge · Stellenbosch</div>
+    <div class="lodge-visit-text">An evening working visit to the Irish Constitution lodge in Stellenbosch is a natural centrepiece for Day 3. Dutch brethren of the Grootoosten sitting in lodge with Irish brethren in the heart of the Cape Winelands — the same fraternal bond that first brought multiple constitutions together at the Cape after 1806. Contact Sharman Crawford Lodge No. 608 (info@ceinspector.com) well in advance for a personal introduction to the Stellenbosch Irish lodge Secretary and to arrange the visit.</div>
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🏡</div>
+    <div>
+      <div class="evening-label">Overnight — Franschhoek</div>
+      <div class="evening-text">Stay in Franschhoek, the Cape's gastronomic capital. Suggested accommodation: <em>La Residence</em> or <em>Franschhoek Country House</em> — both in restored heritage buildings. Dinner at <em>Le Quartier Français</em> or <em>La Petite Colombe</em>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 4 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">04</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Four · Paarl &amp; Worcester</div>
+      <div class="day-title">Solomon's Town Plan</div>
+      <div class="day-subtitle">Where Masonic ideals may have shaped the streets themselves</div>
+    </div>
+    <div class="day-badge">Unique Discovery</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Town Heritage</div>
+        <div class="stop-name">Paarl Main Street &amp; Cape Dutch Streetscape</div>
+        <div class="stop-location">Paarl · Founded 1720 · One of South Africa's longest main streets</div>
+        <div class="stop-desc">Paarl's Main Street stretches for nearly 12 kilometres and is lined with Cape Dutch, Georgian, and Victorian buildings, many of which date to the 18th century. The town was an important agricultural and commercial centre and had a Masonic presence from the early colonial period. Paarl is also home to the Afrikaans Language Monument, marking the town's significance to the language that evolved from the Low Dutch of the lodge rooms.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Connection</strong>
+          Afrikaans carries the direct linguistic inheritance of Dutch Masonic terminology — Groot Oos, Meestergraad, Losiis. The language that grew from the Dutch colonial vernacular is in part the language of the Dutch lodge. Paarl's role as a centre of Afrikaner cultural life connects directly to the Dutch Reformed tradition that, according to academic research, was influenced throughout the 19th century by Masonic ideals of civic order and communal structure.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Wine Tasting</div>
+        <div class="stop-name">Avondale Wine Estate — Biodynamic Tasting</div>
+        <div class="stop-location">Lustigan Road, Klein Drakenstein, Paarl · Open Mon–Sat 10am–5pm · +27 21 863 1976</div>
+        <div class="stop-desc">Avondale is one of the Cape's most committed biodynamic wine estates, producing wines that are a direct expression of their terroir — no chemicals, no shortcuts, and a profound respect for the land. The tasting experience is guided and educational, explaining how biodynamic farming principles align with the natural cycles of the earth. The wines, particularly the Jonty's Ducks range and the flagship Anima, are among the most talked-about in Paarl. The estate is set in the Klein Drakenstein mountains with dramatic views.</div>
+        <div class="stop-masonic">
+          <strong>Why This Estate on This Journey</strong>
+          Biodynamic farming applies a philosophy of harmony between human craft and natural order — the land as a living system to be worked with, not against. The parallels with the Masonic concept of the craftsman working in alignment with the Great Architect's creation are not accidental. For Dutch brethren from a country with a deep tradition of sustainable land management, Avondale is a natural fit.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Extraordinary Heritage Discovery</div>
+        <div class="stop-name">Worcester — The Kerkplaats &amp; Solomon's Town Plan</div>
+        <div class="stop-location">Worcester · Founded 1820 · Breede River Valley</div>
+        <div class="stop-desc">Worcester was surveyed and laid out in 1820 by Willem Hertzog, Deputy Surveyor General of the Cape and an active Freemason. Academic research (published in the <em>Journal for the Study of Religion</em>, 2017) has established strong evidence that Hertzog's standard town plan — the kerkplaats — was based on an idealised reconstruction of Solomon's Temple, the foundational symbol of speculative Freemasonry. The plan was used here and then replicated across more than eighteen Western Cape towns.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance — Extraordinary</strong>
+          This is perhaps the most remarkable Masonic heritage discovery in the Western Cape. The kerkplaats plan places the Dutch Reformed Church (representing the Holy of Holies) at the axis of the settlement, with the Drostdy (civic authority) aligned on axis opposite it — mirroring the layout of Solomon's Temple. Hertzog was a Freemason. The plan was used to lay out Somerset West (1817), Worcester (1820), Piquetberg (1841), Calvinia (1851), and more than a dozen other Western Cape towns. Stand in Worcester's town square and you are standing in a layout that may encode Solomon's Temple in its proportions.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Active Lodge</div>
+        <div class="stop-name">Worcester Masonic Temple</div>
+        <div class="stop-location">Beck Avenue, Worcester</div>
+        <div class="stop-desc">The active Masonic lodge in Worcester meets at Beck Avenue and is part of the English Constitution, Western Division. By advance arrangement it may be possible to visit the temple and meet local brethren. Contact via freemasonrycape.net — email: dlock@telkomsa.net.</div>
+        <div class="stop-masonic">
+          <strong>Lodge Visits — Worcester</strong>
+          Worcester has both an English Constitution lodge (Beck Avenue temple, dlock@telkomsa.net) and an Irish Constitution lodge. A fraternal visit to the Irish lodge — Dutch brethren of the Grootoosten in a lodge whose town was potentially laid out on Masonic principles by a brother surveyor two centuries ago — is among the most historically layered experiences on this entire journey. Contact Sharman Crawford Lodge No. 608 (info@ceinspector.com) for an introduction to the Worcester Irish lodge Secretary.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🍷</div>
+    <div>
+      <div class="evening-label">Overnight — Worcester or Robertson Wine Route</div>
+      <div class="evening-text">Stay in the Breede River Valley. If overnighting in Robertson, consider a sunset tasting at <em>Springfield Estate</em> (wild ferment Sauvignon Blanc, one of the Cape's best-kept secrets) or <em>Graham Beck</em>, whose Cap Classique Brut was served at both Nelson Mandela's inauguration and Barack Obama's. The Robertson Wine Route offers exceptional value and quality, with far fewer visitors than Stellenbosch or Franschhoek. Suggested stay: <em>Cumberland Hotel, Worcester</em> or a Robertson wine farm guesthouse.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 5 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">05</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Five · Tulbagh</div>
+      <div class="day-title">Church Street &amp; the Boland Interior</div>
+      <div class="day-subtitle">The finest surviving Cape Dutch streetscape — rebuilt from rubble</div>
+    </div>
+    <div class="day-badge">~120km from Cape Town</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Heritage Street</div>
+        <div class="stop-name">Church Street, Tulbagh</div>
+        <div class="stop-location">Tulbagh · South Africa's fourth oldest town · Founded 1795</div>
+        <div class="stop-desc">Church Street in Tulbagh is widely regarded as the finest surviving streetscape of Cape Dutch and Cape Victorian provincial buildings in South Africa. On 29 September 1969, an earthquake destroyed much of the street. What followed was a national restoration effort that carefully rebuilt each building to its original design, preserving the architectural heritage of the early colonial period. The result is an almost perfectly preserved 18th and 19th century street.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Connection</strong>
+          Tulbagh was named for Governor Ryk Tulbagh, whose tolerant and enlightened administration in the 1750s and 1760s created the climate in which Masonry first took root at the Cape. He is not confirmed as a Mason, but his civic values — religious tolerance, intellectual openness, encouragement of trade — mirror precisely those that Dutch Masonry promoted. The Dutch Reformed Church at the end of Church Street, first built in 1743, is one of the oldest church buildings in South Africa still in its original form.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Wine Tasting</div>
+        <div class="stop-name">Drostdy-Hof &amp; The Tulbagh Wine Route</div>
+        <div class="stop-location">Tulbagh Wine Route · Multiple estates within 10km · Open daily</div>
+        <div class="stop-desc">Tulbagh is surrounded by four mountain ranges and produces some of the Cape's most distinctive wines — particularly Riesling, Shiraz, and Chardonnay from estates like Saronsberg, Twee Jonge Gezellen (one of the oldest wine farms in South Africa, founded 1710), and Drostdy-Hof. Twee Jonge Gezellen — meaning Two Young Bachelors — is the pick of the valley: its tasting room is in a historic Cape Dutch homestead and its NV sparkling wine has become a South African institution. The valley's cool mountain air produces wines of real elegance.</div>
+        <div class="stop-masonic">
+          <strong>Heritage Note</strong>
+          Twee Jonge Gezellen was founded in 1710, just sixty years after Van Riebeeck planted the first Cape vines and thirty-eight years before De Goede Hoop Lodge was warranted. The families who farmed this valley were part of the same Dutch settler community from which the Cape's first Masons were drawn. Tasting wine here is drinking the history.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Museum Complex</div>
+        <div class="stop-name">Tulbagh Museum Complex</div>
+        <div class="stop-location">Church Street, Tulbagh</div>
+        <div class="stop-desc">Four historic buildings on Church Street form a museum complex covering the settlement history of the Tulbagh valley. The Oude Kerk Volksmuseum — housed in the oldest church building in South Africa still in its original form — contains centuries of genealogical records and social history of the Dutch and Huguenot families who settled here. Family names that appear in De Goede Hoop Lodge membership rolls can be traced here.</div>
+        <div class="stop-masonic">
+          <strong>Research Opportunity</strong>
+          The genealogical records held here may allow brethren with Dutch Cape colonial ancestry to trace connections to the founding members of De Goede Hoop Lodge. Abraham Chiron, Abraham van der Weyde, Pieter Soermans, and Olof de Wet — the lodge's founders — left descendants across the Western Cape.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">4</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Landscape &amp; Context</div>
+        <div class="stop-name">The Tulbagh Valley &amp; Roodezand Pass</div>
+        <div class="stop-location">Tulbagh Valley, Western Cape</div>
+        <div class="stop-desc">The Tulbagh valley is enclosed by mountains on three sides, connected to the outer world originally only through the Roodezand Pass. This geographic isolation gave the early settlement its particular character — a self-contained Dutch community in the Boland interior, far from Cape Town's administrative centre, dependent on its own civic institutions. The nachtmaal gathering held here every three months was effectively the town's social and commercial parliament.</div>
+        <div class="stop-masonic">
+          <strong>Historical Note</strong>
+          The isolated Dutch communities of the interior Boland looked to the lodge network in Cape Town for civic connection. The kerkplaats town plan that structured Tulbagh's layout was, according to academic research, based on Masonic ideals of ordered community life centred on a sacred axis. Even in the remotest Boland valleys, the fraternal hand was present in the design of the street.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🌿</div>
+    <div>
+      <div class="evening-label">Overnight — Tulbagh</div>
+      <div class="evening-text">Stay on Church Street itself. Suggested: <em>Cape Dutch Quarters</em> — a portfolio of restored heritage properties dating from 1809, on the historic street. An extraordinary experience of sleeping inside the living heritage of the Cape.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 6 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">06</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Six · Swellendam &amp; the Overberg</div>
+      <div class="day-title">The Oldest Inland Town</div>
+      <div class="day-subtitle">South Africa's third oldest town and the Drostdy heritage</div>
+    </div>
+    <div class="day-badge">~220km from Cape Town</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">National Monument Complex</div>
+        <div class="stop-name">Drostdy Museum, Swellendam</div>
+        <div class="stop-location">Swellendam · Founded 1747 · Third oldest town in South Africa</div>
+        <div class="stop-desc">The Drostdy — the magistrate's residence — was built in 1747 and is the centrepiece of the Drostdy Museum complex, one of the finest heritage museum complexes in the country. The building is a classic example of Cape Dutch civic architecture: the magistrate's court, the gaol, and the homestead arranged around a central axis with the Dutch Reformed Church at the other end of the main street — the kerkplaats plan in its earliest form.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Connection</strong>
+          Swellendam was established in 1747, just twenty-five years before De Goede Hoop Lodge was formed in Cape Town. The Dutch families who settled here and served as officials, farmers, and merchants were the same community from which the Cape's first Masons were drawn. The Drostdy's civic layout — church and court aligned on a single axis — is an early instance of the ordered community planning that Dutch Masonic ideals helped promote across the Cape.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Lunch · Heritage Restaurant</div>
+        <div class="stop-name">La Belle Alliance</div>
+        <div class="stop-location">Main Road, Swellendam · Between the Drostdy Museum and the Dutch Reformed Church · Est. 1998</div>
+        <div class="stop-desc">The most fitting lunch stop on the entire journey. La Belle Alliance is a family restaurant occupying the former Masonic lodge building in Swellendam, positioned directly between the Drostdy Museum and the Dutch Reformed Church — the two poles of the kerkplaats axis. The building retains original Masonic symbols that are still visible on the premises. The garden terrace sits on the banks of the Koornlands river under a canopy of White Stinkwood trees. Open daily 8am–5pm. Seating for 50 indoors and 100 in the garden. Staff speak English, Afrikaans, Dutch, Flemish, French, and German.</div>
+        <div class="stop-masonic">
+          <strong>Masonic Significance</strong>
+          You are eating lunch in the old lodge building, between the church and the magistrate's court, in a town whose very street plan may be based on Solomon's Temple. The Masonic symbols still visible in the building are the direct physical evidence of the craft's presence in Swellendam. It is difficult to imagine a more appropriate place for Dutch brethren to sit together and raise a glass on a Masonic heritage journey. La Belle Alliance — Beautiful Alliance. The name itself speaks to fraternal tradition.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">3</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Town Heritage Walk</div>
+        <div class="stop-name">Swellendam Main Street</div>
+        <div class="stop-location">Swellendam, Overberg</div>
+        <div class="stop-desc">Swellendam's main street preserves some of the finest examples of Cape Dutch and Cape Victorian provincial architecture outside of Cape Town. The town briefly declared itself an independent republic in 1795 — the Swellendam Republic — when news of the Dutch Patriot Revolution reached the Cape. The connections between Enlightenment political ideals and the lodge community of Cape Town were strong at this moment.</div>
+        <div class="stop-masonic">
+          <strong>Historical Note</strong>
+          The 1795 Swellendam Republic was declared by Dutch settlers inspired by Enlightenment and Patriot ideals — the same intellectual current that ran through the Dutch Masonic tradition. The Cape lodge De Goede Hoop went into recess in 1781 partly because Masonic teachings of equality among men met with opposition in the stratified colonial society; by 1795, those ideas had helped fuel a brief act of political self-determination.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">4</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Natural Heritage</div>
+        <div class="stop-name">Bontebok National Park</div>
+        <div class="stop-location">Near Swellendam</div>
+        <div class="stop-desc">A pause for the landscape itself — the Overberg's fynbos, with the Langeberg mountains as backdrop. The smallest of South Africa's national parks protects the bontebok antelope, once nearly extinct. An afternoon walk in the park offers perspectives on the natural landscape that the Dutch colonists found and through which the lodge network slowly spread eastward.</div>
+        <div class="stop-masonic">
+          <strong>Note</strong>
+          Not every stop on a Masonic journey needs a carved pediment. The landscape itself is part of the heritage — the same mountains and valleys that Dutch lodge brethren crossed to establish their communities in the 18th and 19th centuries.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🌅</div>
+    <div>
+      <div class="evening-label">Overnight — Swellendam or Return to Cape Town</div>
+      <div class="evening-text">Either overnight in Swellendam (suggested: <em>Aan de Oevers</em> or <em>Old Mill Guest House</em>) or return to Cape Town in time for the final evening preparation. Swellendam is approximately 220km from Cape Town — a comfortable two-hour drive.</div>
+    </div>
+  </div>
+</div>
+
+<div class="day-separator"></div>
+
+<!-- DAY 7 -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-number">07</div>
+    <div class="day-header-text">
+      <div class="day-label">Day Seven · Cape Town</div>
+      <div class="day-title">The Farewell Lodge Evening</div>
+      <div class="day-subtitle">Working visit to Sharman Crawford Lodge No. 608</div>
+    </div>
+    <div class="day-badge">Lodge Working</div>
+  </div>
+
+  <div class="stops-grid">
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">1</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Free Morning</div>
+        <div class="stop-name">Cape Town Waterfront &amp; Company's Garden</div>
+        <div class="stop-location">Cape Town city centre</div>
+        <div class="stop-desc">The final morning is free for personal exploration. The Company's Garden — established by Jan van Riebeeck in 1652 as the VOC's vegetable garden — is the geographic heart of Dutch colonial Cape Town. The lodge, Tuynhuys, and the South African Museum are all adjacent to the garden. A final walk through this precinct closes the geographic circle of the journey.</div>
+        <div class="stop-masonic">
+          <strong>Final Walk</strong>
+          Stand in the Company's Garden and look toward Tuynhuys (Masonic facade), the Groote Kerk (Masonic pulpit), and the lodge entrance on Bouquet Street (Solomon's Temple dimensions). You are standing at the centre of a Masonic civic landscape — one built by Dutch brethren on the southernmost tip of Africa, 250 years ago.
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-marker"><div class="stop-marker-num">2</div></div>
+      <div class="stop-body">
+        <div class="stop-type">Lodge Preparation</div>
+        <div class="stop-name">Afternoon Rest &amp; Regalia</div>
+        <div class="stop-location">Cape Town</div>
+        <div class="stop-desc">Brethren are requested to have regalia available for the evening lodge working. Dutch Constitution regalia is welcome. South African lodges under the Irish Constitution work in English using the Irish ritual. Visitors from the Grootoosten are warmly received and may be invited to occupy the chairs of the lodge officers by invitation of the Worshipful Master.</div>
+        <div class="stop-masonic">
+          <strong>Preparation Note</strong>
+          The Irish Constitution and the Grootoosten der Nederlanden share a tradition of mutual recognition. The lodge will open in the name of the Grand Lodge of Ireland. Brethren from the Grootoosten should confirm their lodge membership and Masonic standing via their Secretary in advance of travel.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lodge-visit">
+    <div class="lodge-visit-label">Evening — Working Visit</div>
+    <div class="lodge-visit-title">Sharman Crawford Lodge No. 608 · Irish Constitution · Cape Town</div>
+    <div class="lodge-visit-text">The journey closes with a formal lodge working at Sharman Crawford Lodge No. 608 — the host lodge of this itinerary, under the Irish Constitution. A Masonic dinner follows the working. This is the moment when the week of heritage travel becomes lived fraternal experience: Dutch brethren and South African brethren at labour together, in the city where Dutch Masonry first took root in Africa. Contact: Sharman Crawford Lodge No. 608 · info@ceinspector.com</div>
+  </div>
+
+  <div class="evening-box">
+    <div class="evening-icon">🕯️</div>
+    <div>
+      <div class="evening-label">After Festive Board</div>
+      <div class="evening-text">The festive board following the working is the natural close to the journey. Toast the brethren of De Goede Hoop 1772 — and the tradition they carried from Amsterdam to the Cape. <em>Vrijheid, gelijkheid, broederschap.</em> Liberty, equality, brotherhood.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRACTICAL -->
+<div class="practical">
+  <h2>Practical Notes for the Journey</h2>
+  <div class="practical-grid">
+
+    <div class="practical-card">
+      <h3>Logistics</h3>
+      <ul>
+        <li>Best travelled by private minibus or self-drive — distances between towns are 30–220km</li>
+        <li>Cape Town is the logical base for Days 1, 2, and 7; Day 3 overnight in Franschhoek; Day 4–5 in the Breede River Valley or Tulbagh; Day 6 in Swellendam or return</li>
+        <li>Car rental or a chartered driver-guide is recommended — roads are excellent throughout</li>
+        <li>Best travel seasons: March–May (autumn harvests, quiet) or September–November (spring wildflowers)</li>
+        <li>Dutch speakers will find Afrikaans highly comprehensible — the languages share deep roots</li>
+      </ul>
+    </div>
+
+    <div class="practical-card">
+      <h3>Lodge Visit Arrangements</h3>
+      <ul>
+        <li>De Goede Hoop Lodge tours: contact Grand Lodge of South Africa — grandlodge.co.za</li>
+        <li>Stellenbosch Lodge No. 2646 (English): stblodge2646@gmail.com</li>
+        <li>Stellenbosch Irish Constitution lodge: contact via Sharman Crawford No. 608</li>
+        <li>Worcester English Constitution lodge: dlock@telkomsa.net</li>
+        <li>Worcester Irish Constitution lodge: contact via Sharman Crawford No. 608</li>
+        <li>Sharman Crawford Lodge No. 608 (Irish, Cape Town): info@ceinspector.com</li>
+        <li>All lodge visits require advance notice of at least 4–6 weeks</li>
+        <li>Bring a letter of introduction from your Secretary and proof of lodge membership</li>
+        <li>Dutch Constitution regalia is accepted at all lodges on this itinerary</li>
+      </ul>
+    </div>
+
+    <div class="practical-card">
+      <h3>Accommodation Suggestions</h3>
+      <ul>
+        <li>Cape Town: The Twelve Apostles Hotel, or boutique hotels in De Waterkant</li>
+        <li>Franschhoek: La Residence, Franschhoek Country House</li>
+        <li>Stellenbosch: Lanzerac Hotel (historic wine estate)</li>
+        <li>Tulbagh: Cape Dutch Quarters, Church Street (1809 heritage property)</li>
+        <li>Swellendam: Aan de Oevers Guest House, Old Mill</li>
+        <li>All accommodation listed is in or adjacent to heritage buildings</li>
+      </ul>
+    </div>
+
+    <div class="practical-card">
+      <h3>Ladies Companion Programme</h3>
+      <ul>
+        <li>The Franschhoek Wine Tram — hop-on hop-off across 25 estates, no driving required</li>
+        <li>Stellenbosch galleries, boutiques, and the Botanical Garden</li>
+        <li>Boulders Beach penguin colony, Simon's Town — a 45-minute drive from Cape Town</li>
+        <li>Whale watching from Hermanus — Southern Right whales calve here June to November</li>
+        <li>Cape Point Nature Reserve and Chapman's Peak coastal drive</li>
+        <li>The Neighbourgoods Market at the Old Biscuit Mill, Woodstock — Saturday mornings</li>
+        <li>Kalk Bay harbour, antique shops, and the Cape Malay quarter of the Bo-Kaap</li>
+        <li>A dedicated ladies programme can be designed alongside the Masonic itinerary — contact info@ceinspector.com to discuss</li>
+      </ul>
+    </div>
+
+    <div class="practical-card">
+      <h3>Further Reading</h3>
+      <ul>
+        <li>Cooper, A.A. — The Freemasons of South Africa (Human &amp; Rousseau, Cape Town, 1986)</li>
+        <li>Jeppe, C.J. — The Freemasons in South Africa (1934)</li>
+        <li>Visser, G. — Symbolic Dimensions of 19th Century Dutch Colonial Settlement at the Cape (Journal for the Study of Religion, 2017)</li>
+        <li>Grootoosten der Nederlanden — vrijmetselarij.nl</li>
+        <li>Grand Lodge of South Africa — grandlodge.co.za</li>
+        <li>District Grand Lodge Western Division — freemasonrycape.net</li>
+        <li>De Goede Hoop Temple history — grandlodge.co.za/de-goede-hoop-temple</li>
+        <li>Sharman Crawford Lodge No. 608 — sharmancrawfordlodge.org.za</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-text">"Every lodge is a ship that carries the light of those who came before."</div>
+  <div class="footer-lodge">Sharman Crawford Lodge No. 608 · Irish Constitution · Cape Town · South Africa</div>
+</div>
+
+</body>
+</html>
