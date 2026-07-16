@@ -485,19 +485,102 @@
   }
 
   @media print {
+    /* Hide UI elements */
     .print-btn { display: none !important; }
-    body { background: white; font-size: 11px; }
-    .cover { padding: 40px; background: #0D1420 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .intro { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .overview { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .day-section { padding: 0 40px 40px; page-break-before: always; }
-    .day-section:first-of-type { page-break-before: avoid; }
-    .stop { break-inside: avoid; }
-    .lodge-visit, .evening-box { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .practical { page-break-before: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .overview { page-break-after: always; }
     .day-separator { display: none; }
+
+    /* Page setup */
+    @page { margin: 15mm 12mm; size: A4; }
+    body { background: white; font-size: 10.5px; line-height: 1.5; }
+
+    /* Force colour printing for dark backgrounds */
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+
+    /* Cover — always its own page */
+    .cover { padding: 40px; page-break-after: always; break-after: page; }
+
+    /* Intro + overview together on one page */
+    .intro { page-break-after: avoid; break-after: avoid; }
+    .overview { page-break-after: always; break-after: page; }
+
+    /* Each day section starts on a fresh page */
+    .day-section { 
+      padding: 0 30px 30px;
+      page-break-before: always; 
+      break-before: page;
+    }
+
+    /* Day header must stay with first stop — never orphaned */
+    .day-header { 
+      page-break-after: avoid; 
+      break-after: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* Stops — never cut mid-card */
+    .stop { 
+      page-break-inside: avoid; 
+      break-inside: avoid;
+      margin-bottom: 12px;
+    }
+
+    /* Stop marker column + body stay together */
+    .stop-marker, .stop-body { 
+      page-break-inside: avoid; 
+      break-inside: avoid; 
+    }
+
+    /* Masonic note boxes — never split */
+    .stop-masonic { 
+      page-break-inside: avoid; 
+      break-inside: avoid;
+    }
+
+    /* Lodge visit boxes */
+    .lodge-visit { 
+      page-break-inside: avoid; 
+      break-inside: avoid;
+      page-break-before: avoid;
+      break-before: avoid;
+    }
+
+    /* Evening boxes */
+    .evening-box { 
+      page-break-inside: avoid; 
+      break-inside: avoid;
+    }
+
+    /* Practical section on its own page */
+    .practical { 
+      page-break-before: always; 
+      break-before: page;
+    }
+    .practical-card { 
+      page-break-inside: avoid; 
+      break-inside: avoid; 
+    }
+
+    /* Footer */
+    .footer { page-break-before: avoid; break-before: avoid; }
+
+    /* Stops grid — allow natural flow but keep each stop intact */
+    .stops-grid { 
+      display: block; 
+    }
+
+    /* Links plain */
     a { color: inherit; text-decoration: none; }
+
+    /* Overview grid readable in print */
+    .overview-grid { 
+      display: flex; 
+      flex-wrap: wrap;
+    }
+    .overview-day { 
+      width: 14%; 
+      font-size: 9px; 
+    }
   }
 
 </style>
